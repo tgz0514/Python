@@ -1,0 +1,336 @@
+{
+    "subject_collection_items": [
+        {
+            "forum_info": null,
+            "id": "27605698",
+            "rating": {
+                "count": 180943,
+                "value": 6.7,
+                "max": 10
+            },
+            "original_price": null,
+            "description": "",
+            "actors": [
+                "沈腾",
+                "宋芸桦",
+                "张一鸣"
+            ],
+            "label": null,
+            "subtype": "",
+            "info": "中国大陆 / 喜剧 / 闫非 / 沈腾 宋芸桦",
+            "uri": "douban://douban.com/movie/27605698",
+            "null_rating_reason": "",
+            "has_linewatch": false,
+            "reviewer_name": "",
+            "release_date": "07.27",
+            "card_subtitle": "2018 / 中国大陆 / 喜剧 / 闫非 彭大魔 / 沈腾 宋芸桦",
+            "type": "movie",
+            "date": null,
+            "url": "https://www.douban.com/doubanapp/dispatch?uri=/movie/27605698/",
+            "directors": [
+                "闫非"
+            ],
+            "actions": [],
+            "year": "2018",
+            "cover": {
+                "width": 570,
+                "url": "https://img1.doubanio.com/view/photo/m_ratio_poster/public/p2529206747.jpg",
+                "height": 950,
+                "shape": "rectangle"
+            },
+            "title": "西虹市首富",
+            "price": null
+        },
+        {
+            "forum_info": null,
+            "id": "30156898",
+            "rating": null,
+            "original_price": null,
+            "description": "",
+            "actors": [
+                "坂泰斗",
+                "寿美菜子",
+                "白石晴香"
+            ],
+            "label": null,
+            "subtype": "",
+            "info": "日本 中国大陆 / 动画 / 李豪凌 / 坂泰斗 寿美菜子",
+            "uri": "douban://douban.com/movie/30156898",
+            "null_rating_reason": "暂无评分",
+            "has_linewatch": false,
+            "reviewer_name": "",
+            "release_date": "08.04",
+            "card_subtitle": "2018 / 日本 中国大陆 / 动画 / 李豪凌 易小星 竹内良贵 / 坂泰斗 寿美菜子",
+            "type": "movie",
+            "date": null,
+            "url": "https://www.douban.com/doubanapp/dispatch?uri=/movie/30156898/",
+            "directors": [
+                "李豪凌"
+            ],
+            "actions": [],
+            "year": "2018",
+            "cover": {
+                "width": 2160,
+                "url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2526429256.jpg",
+                "height": 3168,
+                "shape": "rectangle"
+            },
+            "title": "肆式青春",
+            "price": null
+        },
+        {
+            "forum_info": null,
+            "id": "27622447",
+            "rating": {
+                "count": 27876,
+                "value": 8.8,
+                "max": 10
+            },
+            "original_price": null,
+            "description": "",
+            "actors": [
+                "中川雅也",
+                "安藤樱",
+                "松冈茉优"
+            ],
+            "label": null,
+            "subtype": "",
+            "info": "日本 / 剧情 犯罪 家庭 / 是枝裕和 / 中川雅也 安藤樱",
+            "uri": "douban://douban.com/movie/27622447",
+            "null_rating_reason": "",
+            "has_linewatch": false,
+            "reviewer_name": "",
+            "release_date": "08.03",
+            "card_subtitle": "2018 / 日本 / 剧情 犯罪 家庭 / 是枝裕和 / 中川雅也 安藤樱",
+            "type": "movie",
+            "date": null,
+            "url": "https://www.douban.com/doubanapp/dispatch?uri=/movie/27622447/",
+            "directors": [
+                "是枝裕和"
+            ],
+            "actions": [],
+            "year": "2018",
+            "cover": {
+                "width": 1071,
+                "url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2529394955.jpg",
+                "height": 1500,
+                "shape": "rectangle"
+            },
+            "title": "小偷家族",
+            "price": null
+        },
+        {
+            "forum_info": null,
+            "id": "30146756",
+            "rating": {
+                "count": 9118,
+                "value": 7.3,
+                "max": 10
+            },
+            "original_price": null,
+            "description": "",
+            "actors": [
+                "路知行",
+                "阎萌萌",
+                "褚珺"
+            ],
+            "label": null,
+            "subtype": "",
+            "info": "中国大陆 / 动画 奇幻 / 刘阔 / 路知行 阎萌萌",
+            "uri": "douban://douban.com/movie/30146756",
+            "null_rating_reason": "",
+            "has_linewatch": false,
+            "reviewer_name": "",
+            "release_date": "08.03",
+            "card_subtitle": "2018 / 中国大陆 / 动画 奇幻 / 刘阔 / 路知行 阎萌萌",
+            "type": "movie",
+            "date": null,
+            "url": "https://www.douban.com/doubanapp/dispatch?uri=/movie/30146756/",
+            "directors": [
+                "刘阔"
+            ],
+            "actions": [],
+            "year": "2018",
+            "cover": {
+                "width": 1288,
+                "url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2528298441.jpg",
+                "height": 2000,
+                "shape": "rectangle"
+            },
+            "title": "风语咒",
+            "price": null
+        },
+        {
+            "forum_info": null,
+            "id": "27615564",
+            "rating": {
+                "count": 1339,
+                "value": 6.4,
+                "max": 10
+            },
+            "original_price": null,
+            "description": "",
+            "actors": [
+                "弗兰克·盖思堂彼得",
+                "马利克·班泽拉",
+                "伯纳尔·法西"
+            ],
+            "label": null,
+            "subtype": "",
+            "info": "法国 / 喜剧 动作 犯罪 / 弗兰克·盖思堂彼得 / 弗兰克·盖思堂彼得 马利克·班泽拉",
+            "uri": "douban://douban.com/movie/27615564",
+            "null_rating_reason": "",
+            "has_linewatch": false,
+            "reviewer_name": "",
+            "release_date": "08.03",
+            "card_subtitle": "2018 / 法国 / 喜剧 动作 犯罪 / 弗兰克·盖思堂彼得 / 弗兰克·盖思堂彼得 马利克·班泽拉",
+            "type": "movie",
+            "date": null,
+            "url": "https://www.douban.com/doubanapp/dispatch?uri=/movie/27615564/",
+            "directors": [
+                "弗兰克·盖思堂彼得"
+            ],
+            "actions": [],
+            "year": "2018",
+            "cover": {
+                "width": 678,
+                "url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2529136453.jpg",
+                "height": 950,
+                "shape": "rectangle"
+            },
+            "title": "的士速递5",
+            "price": null
+        },
+        {
+            "forum_info": null,
+            "id": "25882296",
+            "rating": {
+                "count": 66447,
+                "value": 6.6,
+                "max": 10
+            },
+            "original_price": null,
+            "description": "",
+            "actors": [
+                "赵又廷",
+                "冯绍峰",
+                "林更新"
+            ],
+            "label": null,
+            "subtype": "",
+            "info": "中国大陆 香港 / 动作 悬疑 古装 / 徐克 / 赵又廷 冯绍峰",
+            "uri": "douban://douban.com/movie/25882296",
+            "null_rating_reason": "",
+            "has_linewatch": false,
+            "reviewer_name": "",
+            "release_date": "07.27",
+            "card_subtitle": "2018 / 中国大陆 香港 / 动作 悬疑 古装 / 徐克 / 赵又廷 冯绍峰",
+            "type": "movie",
+            "date": null,
+            "url": "https://www.douban.com/doubanapp/dispatch?uri=/movie/25882296/",
+            "directors": [
+                "徐克"
+            ],
+            "actions": [],
+            "year": "2018",
+            "cover": {
+                "width": 2500,
+                "url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2526405034.jpg",
+                "height": 3500,
+                "shape": "rectangle"
+            },
+            "title": "狄仁杰之四大天王",
+            "price": null
+        },
+        {
+            "forum_info": null,
+            "id": "30208005",
+            "rating": null,
+            "original_price": null,
+            "description": "",
+            "actors": [
+                "阎么么",
+                "赵一博",
+                "张磊"
+            ],
+            "label": null,
+            "subtype": "",
+            "info": "中国大陆 / 动画 / 王云飞 / 阎么么 赵一博",
+            "uri": "douban://douban.com/movie/30208005",
+            "null_rating_reason": "暂无评分",
+            "has_linewatch": false,
+            "reviewer_name": "",
+            "release_date": "08.03",
+            "card_subtitle": "2018 / 中国大陆 / 动画 / 王云飞 张林旭 李佳怡 / 阎么么 赵一博",
+            "type": "movie",
+            "date": null,
+            "url": "https://www.douban.com/doubanapp/dispatch?uri=/movie/30208005/",
+            "directors": [
+                "王云飞"
+            ],
+            "actions": [],
+            "year": "2018",
+            "cover": {
+                "width": 4000,
+                "url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2528380655.jpg",
+                "height": 6000,
+                "shape": "rectangle"
+            },
+            "title": "神秘世界历险记4",
+            "price": null
+        },
+        {
+            "forum_info": null,
+            "id": "26767512",
+            "rating": null,
+            "original_price": null,
+            "description": "",
+            "actors": [
+                "韩庚",
+                "凤小岳",
+                "李媛"
+            ],
+            "label": null,
+            "subtype": "",
+            "info": "中国大陆 香港 美国 / 喜剧 动作 犯罪 / 李海龙 / 韩庚 凤小岳",
+            "uri": "douban://douban.com/movie/26767512",
+            "null_rating_reason": "暂无评分",
+            "has_linewatch": false,
+            "reviewer_name": "",
+            "release_date": "08.03",
+            "card_subtitle": "2018 / 中国大陆 香港 美国 / 喜剧 动作 犯罪 / 李海龙 / 韩庚 凤小岳",
+            "type": "movie",
+            "date": null,
+            "url": "https://www.douban.com/doubanapp/dispatch?uri=/movie/26767512/",
+            "directors": [
+                "李海龙"
+            ],
+            "actions": [],
+            "year": "2018",
+            "cover": {
+                "width": 1300,
+                "url": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2529787833.jpg",
+                "height": 1820,
+                "shape": "rectangle"
+            },
+            "title": "解码游戏",
+            "price": null
+        }
+    ],
+    "subject_collection": {
+        "uri": "douban://douban.com/subject_collection/movie_showing",
+        "sharing_url": "https://www.douban.com/doubanapp/dispatch?uri=/subject_collection/movie_showing/",
+        "display": {
+            "layout": "grid"
+        },
+        "url": "https://m.douban.com/app_topic/movie_showing",
+        "cover_url": "",
+        "id": "movie_showing",
+        "name": "影院热映",
+        "subject_count": 31,
+        "description": ""
+    },
+    "count": 8,
+    "start": 0,
+    "total": 31
+}
