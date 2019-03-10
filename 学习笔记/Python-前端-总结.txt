@@ -1,0 +1,281 @@
+1.Html常用标签
+	1. 常用块级标签
+	
+		h   : 标题
+		p   : 段落
+		div : 容器
+		ul>li : 无序列表
+		form : 表单 
+		
+	2. 常用行内标签
+	
+		a    : 超链接
+		span : 小容器
+		img  : 插入图 (宽高有效)
+		input : 输入框,text/password/radio/checkbox/file/reset/button (宽高有效)
+		label : 标签
+		em : 斜体(强调语义)
+		i : 斜体
+		b : 粗体
+		strong : 粗体(强调语义)
+		
+2. 常见标签属性		
+	
+	1.一般标签属性
+		id : id标识
+		style : 行内样式
+		href : a超链接地址,link外链css路径
+		src : 图片路径,script外链js路径
+		alt : 图片替换文字
+	
+	2. 表单控件属性
+		name : 控件名字
+		type : 控件类型
+		value : 控件值 
+		outline : 轮廓
+		
+3. Css常用样式
+
+	1. 实体化样式
+	
+		width : 宽
+		height : 高
+		background : 背景图片,背景位置,背景重复,背景颜色
+		border : 边框宽度,边框样式,边框颜色
+	
+	2. 间距和位置样式
+		
+		padding : 内边距
+		margin : 外边距
+		float : 浮动
+		position : 定位,relative/absolute/fixed/static
+		left/right/top/bottom : 方向属性
+		z-index : z轴层级
+ 
+	3. 文字常用属性:
+		
+		color : 颜色
+		font-size : 字体大小
+		font-family : 字体
+		font-weight : 字体加粗,normal/bold
+		font-style : 文字是否倾斜,normal/italic
+		font : 是否加粗 字号/行高 字体
+		text-decoration : 字体修饰,none/underline
+		text-indent : 文字首行缩进
+		
+		
+	4. 居中样式:  ***
+	
+		行内/文本 水平垂直居中: (父元素添加)
+			
+			line-height : 行高等于高   .  垂直居中
+			text-align : center 内容对齐方式  . 水平居中
+			
+		块级标签 : 水平居中: (自己添加) margin : 0 auto ;
+				   垂直居中: (自己添加)  margin : xx 0; 
+			
+			
+		行内块  水平居中: 父元素添加 text-align
+			    垂直居中: 自己添加 margin : xx 0;
+			
+		所有标签水平垂直居中: (子绝父相)
+		
+			position定位 : 所有标签垂直水平居中
+		
+	
+		
+	5. 其他样式:
+		list-style : 无序列表项目符号,none
+		
+		overflow : 溢出隐藏
+			特性:检测自己大小,儿子大小,检测代码是否有问题.
+				可以清除浮动产生的影响
+				可以解决外边距塌陷问题	
+		
+		
+		display : 模式转换,none/block/inline/inline-block
+		
+			float,绝对定位,固定定位,display:inline-block, 都可以模式转换为行内块.
+		
+		border-radius : 圆角边框
+		opacity : 透明度
+		 
+		
+4. Js
+
+	1. 常用方法
+		1.document.getElementById('id'); 根据id获取元素对象 
+	
+	2. 常用事件
+		0. onload : 页面加载完成
+		1. onclick : 点击事件
+		2. onmouseover : 鼠标悬浮事件
+		3. onmouseout : 鼠标离开事件
+		4. onfocus : 获取焦点
+		5. onblur : 失去焦点
+		6. onkeyup : 键盘抬起
+		7. onsubmit : 表单提交事件
+	
+	3. (元素对象)常用属性
+	
+		js元素对象属性,与html元素属性基本一致. 只罗列特殊的.
+	
+		1. id : id
+		2. className : 元素类样式
+		3. innerHTML : 内部文本/内部标签   <>内部文本</>
+		4. style : 行内样式
+			style.fontSize : 文字大小.
+			....省略,带-的改为驼峰即可.
+	
+	4. 数组常用属性/方法
+	
+		1. length : 长度
+		2. xxx[index] : 根据索引获取xxx的某一项
+		3. join('-') : 以某个字符拼接数组,返回string
+		4. push(),pop() : 末尾添加和删除成员
+		5. reverse() : 反转数组
+		6. indexOf() : 获取成员第一次出现的索引
+		7. splice() : 增加/替换或删除成员
+		
+	5. 字符串常用方法
+		
+		
+		3. split('-') : 以某个字符分割字符串,返回数组
+		4. indexOf() : 获取字符/字符串出现的索引
+		5. substring() : 截取字符串
+		
+	6. 字符串转为数值
+		1. parseInt("要转的字符串") : 将数字字符串转换为整数
+		2. parseFloat("要转的字符串") : 将数字字符串转换为小数
+		
+5. JQuery
+	
+	1.$()函数的用法
+	
+		1. $(匿名函数) : 页面加载完成事件
+		2. $('选择器') : 获取元素对象
+		3. $('标签代码') : 创建元素对象
+		
+			$('<li></li>')
+				
+		4. $(js对象) : 将js对象转换为jq对象
+		
+			
+		
+	2. 选择器
+	
+		$('#myId') //选择id为myId的网页元素
+		$('.myClass') // 选择class为myClass的元素
+		$('li') //选择所有的li元素
+		$('#ul1 li span') //选择id为为ul1元素下的所有li下的span元素
+		$('input[name=first]') // 选择name属性等于first的input元素
+		
+	3. 选择器过滤方法
+	
+		$('div').has('p'); // 选择包含p元素的div元素
+		$('div').not('.myClass'); //选择class不等于myClass的div元素
+		$('div').eq(5); //选择第6个div元素
+	
+	4. 选择器转移方法 (层级方法)
+	
+		$('#box').prev(); //选择id是box的元素前面紧挨的同辈元素
+		$('#box').prevAll(); //选择id是box的元素之前所有的同辈元素
+		$('#box').next(); //选择id是box的元素后面紧挨的同辈元素
+		$('#box').nextAll(); //选择id是box的元素后面所有的同辈元素
+		$('#box').parent(); //选择id是box的元素的父元素
+		$('#box').children(); //选择id是box的元素的所有子元素
+		$('#box').siblings(); //选择id是box的元素的同级元素
+		$('#box').find('.myClass'); //选择id是box的元素内的class等于myClass的元素
+		
+	5. 常用方法
+	
+		1. css() : 获取/设置样式 (行内样式操作)
+		2. addClass()/removeClass()/toggleClass() : 类样式操作
+		3. index() : 获取元素索引值(自家排行老几)
+		4. prop() : 获取/设置自带属性  attr() : 操作自定义数据
+		5. html() : 获取/设置内容
+		6. animate() : 动画
+		7. delegate() : 委托
+		
+		
+	6. 常用动画
+	
+		fadeIn()  淡入  (透明度动画)
+		fadeOut() 淡出
+		fadeToggle() 切换淡入淡出
+		hide() 隐藏元素 (对角线动画:传参数)
+		show() 显示元素
+		toggle() 切换元素的可见状态
+		slideDown() 向下展开  (高度/卷拉门动画)
+		slideUp() 向上卷起
+		slideToggle() 依次展开或卷起某个元素
+		
+	7. 常用事件
+	
+		给js的事件去掉on即可.
+		
+		blur() 元素失去焦点
+		focus() 元素获得焦点
+		click() 鼠标单击     
+		mouseover() 鼠标进入 
+		mouseout() 鼠标离开 
+		mouseenter() 鼠标进入 
+		mouseleave() 鼠标离开 
+		hover() 同时为mouseenter和mouseleave事件指定处理函数
+		ready() DOM加载完成 (结构添加完成)
+		submit() 用户递交表单
+		
+	8. 节点操作方法
+	
+		1. append : A append B , A将B添加到子节点末尾			
+		2. prepend : A prepend B , A将B添加到子节点首位	
+		3. after : A after B,  A将B添加到同级之后		 
+		4. before : A before B,  A将B添加到同级之前
+		
+	9. 异步请求
+	
+		1. ajax
+			
+			$.ajax({
+				url:'js/data.json',  // 请求地址,接口 --- url : http://www.baidu.com?username=xxx&password=xxx
+				type:'get',          // 请求类型
+				dataType:'json',    //  与服务器传输的数据类型 , json数据类型
+				data:{key:value}   // 请求参数
+			})
+			.done(function(dat){   // 完成,请求成功的回调函数 . data: 服务器返回的数据
+				alert(dat.name);
+				$('.user_login_btn').hide();
+				$('.user_info em').html( dat.name ).parent().show();
+
+			})
+			.fail(function(error){   // 失败, 请求失败的回调函数
+				console.log(error);
+				alert('服务器超时，请重试！');
+			})
+		
+		2. jsonp
+		
+			将dataType : 改为jsonp即可
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

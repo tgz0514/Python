@@ -1,0 +1,174 @@
+10-jQuery综合应用 Day10 02.48
+
+02-知识点预习
+03-图片轮播器分析
+
+
+	1. 第一张图片默认在0px的位置.
+	
+		从右向左走的动画:
+		
+			其他三张图片,默认760px的位置
+			
+			当前0图片, 0px --- -760px
+			
+			下一张图片1, 760 --- 0px
+
+
+04-获取相应的标签对象
+
+	
+
+05-动态添加小圆点
+
+	界面动态添加元素/标签/节点:
+	
+		1. html()  : (如果是大批量添加) (如果当前标签原本没有内容): 先将要添加的标签以字符串形式拼接起来 一次性,将拼接好的字符串,添加到界面上
+		
+		2. 节点操作: (如果是单次/少量添加. (如果当前标签内部有内容))   append().... : 如果是一个一个添加. append
+	
+	
+	
+		什么时候不能使用html() ,  同级节点操作. (节点操作)
+		
+		什么时候可以使用html() , 子级节点操作. 
+	
+	$points.children(':first').addClass('active');
+		
+		children('p')  : 选中p儿子
+		children(':first') : 选中第一个儿子
+
+06-点击小圆点实现下一张
+07-点击小圆点实现回到上一张
+08-解决跳跃点击小圆点的问题
+09-解决重复点击同一个小圆点的问题
+10-点击左右按钮切换图片及小圆点
+11-处理两种索引越界的问题
+12-解决快速点击左右按钮的问题
+13-添加定时器自动滚动
+14-轮播器代码优化
+15-node环境安装
+
+	nodejs: js版本的服务器.
+
+16-JSON数据格式  ***
+
+	json: 网络传输的一种数据格式.
+	
+	格式:
+	
+		{
+			key:value,
+			key:{}
+		}
+		
+		key : 双引号
+		value : "字符串"/数字/数组[]/字段{}
+
+17-ajax请求简介  ***
+
+
+	1. ajax : 用于js发起请求. 
+	
+	2. 特点:
+	
+		异步,局部刷新,
+		
+		同源策略:一个请求只能请求一个域名下的url.
+	
+
+18-天天生鲜的登录
+
+	1. 启动js的服务器
+	
+		node server.js 
+		
+		server.js : js写的服务器 (mini_server.py)
+		
+	2. ajax的语法:
+	
+		$.ajax({
+				url: './json/test.json',  // 请求的url(相对路径,绝对路径http://localhost:8888/json/test.json)
+				type: 'get',   // 请求类型: get请求方式
+				dataType: 'json'  // 数据类型 : json
+			})
+
+				.done(function (data) {  // 请求成功回调函数 (data,请求到的数据)
+					// console.log(data.name);
+					$login.hide(); // 隐藏登录模块
+					$user.show().children('em').html(data.name);
+
+				})
+
+				.fail(function (error) {  // 请求失败的回调函数 , error:请求失败的原因
+					alert('请求失败!'+error);
+					console.log(error);
+				})
+
+	3. 注意:
+	
+		修改server.js:
+		
+			mimetype:
+			
+				"json": "application/json",
+				
+	4.补充:
+		GET和POST的区别，何时使用POST？ 
+			GET： 
+				1一般用于信息获取，使用URL传递参数，  
+
+				2所发送信息的大小由于url长度的限制而很小,  
+
+				3安全性低      
+			 
+
+			POST： 
+				1一般用于修改服务器上的资源，  
+
+				2对所发送的信息没有限制.      
+
+			何时用post?
+
+				发送大量数据,对安全性有要求的,一般用post方式 
+				
+19-jsonp跨域请求概念
+
+	1. jsonp : 支持跨域请求.  本地服务器,可以请求360服务器.
+	
+		jsonp与json没有关系. 一个是请求技巧. 一个是数据格式
+		
+		jsonp与ajax.  跨域与不跨域
+	
+	2. 语法:  ***
+	
+		$.ajax({
+			url:'https://sug.so.360.cn/suggest',
+			type:'get',
+			dataType:'jsonp',   // 如果要使用jsonp , dataType改为jsonp  (代表的意思,不是说数据类型改为jsonp. 请求方式改为jsonp)
+			data:  {'word':$txt.val()} // 提交给服务器的字段
+		})
+		.done(function(data){
+			alert(data.name);
+		})
+		.fail(function() {
+			alert('服务器超时，请重试！');
+		});
+
+		// data.js里面的数据： fnBack({"name":"tom","age":18});
+	
+20-360跨域请求
+21-百度跨域请求
+
+	  jsonp:'cb'  // 指定请求成功后的回调函数名
+
+
+
+
+
+
+
+
+
+
+

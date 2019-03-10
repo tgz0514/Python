@@ -1,0 +1,330 @@
+﻿01-HTML和CSS入门 Day01 3.27
+
+00-课程简介
+01-今天知识点预习
+02-HTML概念简介
+
+    html : 是一种制作网页的标记(标签)语言
+    
+    学习html其实就相当于在学习  标签
+
+03-VSCode使用简介
+
+    1. 如何创建html文件
+    
+        1. 电脑本地创建文件夹
+        2. vscode打开文件夹
+        3. 新建文件
+
+04-HTML基本结构
+
+    1. html : 网页的根标签
+    
+    2. head : 网页的头
+        网页的配置 : meta
+        网页的标题 : title
+        
+    3. body : 网页的内容
+    
+    4. 标签的分类:
+    
+        双标签: 开始标签 <xxx>和结束标签 </xxx>
+        单标签: 
+
+05-HTML的快捷创建
+
+    1. html基本结构的快捷键
+    
+        !+tab
+        
+    2. 网页的配置 : meta  了解
+    
+        <meta charset="UTF-8">  网页编码格式
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  viewport:视口,浏览器窗口大小 . 根据视口大小做屏幕缩放   (屏幕适配)
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">  ie特殊配置:  edge版本渲染界面
+
+06-标题标签
+
+    1. h1 - h6  (headline)
+    
+    2. 特点: 字体加粗,字体大小不一样
+    
+    3. 使用:  ***
+    
+            网页中只允许使用一次h1 .   只能用在网页logo
+            h2-h5 随便使用 : 字体大小可以根据css来设置
+
+07-图片标签
+
+    1.img  (image)  ***
+    2.标签属性
+        src: (source) 图片路径:本地路径/网络路径
+        alt: (alternative) 替换文字
+            图片加载失败时的提示文字
+            爬虫使用
+            盲人读屏软件
+        title: 鼠标放在图片上的提示文字
+
+08-链接标签  ***
+
+    1. a : 打开一个网页
+    2. 特点: 紫色带下划线的文字 , 鼠标悬浮变为小手
+    3. 标签属性:
+    
+        href : 网页的地址 (本地/网络)
+        
+            默认: "" , 代表当前界面
+                  "#", 空链接
+                  
+        target : 目标  _blank (空白): 新网页打开
+        
+        
+
+09-段落和换行标签
+
+    1. 段落 : 
+        1. p , 描述一段文字，p是paragraph的首字母
+        2. 特点 : 自带上下间距
+        
+    2. 换行 
+        1. br 
+        2. 单标签
+
+
+10-字符实体
+
+    1. 字符实体 : html中的特殊字符
+    
+            &nbsp; 空格  ***
+            &lt;  小于号  less than
+            &gt;  大于号  greater than
+            &amp;   &符号
+    
+    2. 浏览器的特性:  不认识空格和回车. 但是文字之间认识一个空格.  ***
+
+11-div和span标签  ***
+
+    1. div : 大块  . 用来做界面结构搭建
+    
+    2. span : 小块 . 用来表示一些特殊内容
+
+12-常用标签小结
+13-今日头条案例内容展示
+
+    编写网站的思路: **
+    
+        1. 先分析整体架构
+        
+            行
+            列
+            
+        2. 如果某一行内容比较多, 大于2两个内容
+        
+            先用div包裹. 更加稳定,并且好维护
+
+14-CSS概念简介
+
+    1. 层叠样式表 : 美化网页
+    
+    2. 特性:
+    
+        1. 层叠  : 覆盖 , 后写的样式会覆盖先写的样式
+        
+        2. 继承  : 子元素/标签,会继承父元素的文字相关样式
+
+
+15-CSS的行内式写法
+
+        <!-- 行内式写 style属性  不推荐使用-->
+        <div style="color:red;background-color:green">div标签</div>
+        
+        缺点:  1. html代码与css代码未分离
+        
+               2. 不可重用
+
+16-CSS的嵌入式写法  ***
+
+        <!-- 嵌入式写法  : style标签中
+        网站的首页 及上课
+        -->
+        <style> 
+            div{
+                color: red;
+                background-color: greenyellow;
+            }
+
+        </style>
+        
+        缺点: 1. html代码与css代码未完全分离
+        
+        优点: 1. 网页加载速度快 
+              2. 只能在当前html中可以重用
+
+17-CSS外链式写法  ***
+
+     <!-- 外链式   -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+        rel="stylesheet" : 关系: 告诉html , 我是一个样式表
+    
+    优点:   css和html彻底分离  css可以复用  
+    
+    缺点: 网页加载速度稍慢 
+    
+        
+
+18-CSS的三种常用选择器  ***
+
+    选择器:  选中标签的一种语法.
+
+    1. 基础选择器
+    
+        /* 1.标签选择器    使用很少
+         做真实网页项目时 做标签样式重置时使用此选择器
+        */
+        /* div{
+            color: red;
+        }
+
+        a{
+            color: green;
+        } */
+
+
+        /* 2.类选器   使用最多****   
+        前面不要少了小点
+        
+        语法: .类选择器名
+        
+        选中类名叫box的那个标签
+        */
+        .box{
+            color: red;
+        }
+
+    2. 复合选择器  : 由多个基础选择器组成的.
+    
+        /* 3.层级/后代 */   一般用于标签嵌套
+        语法: 基础选择器1 基础选择器2 ...  
+        注意: 基础选择器1 与 基础选择器2 必须有真实的后代关系
+        .box2 p{
+            color: green;
+        }
+        
+        div p
+        
+        div .p1
+        
+        
+
+19-CSS中文字常用属性  ***
+
+     .box {
+            /* 文字颜色 */
+            color: red; 
+            /* 字体大小  像素*/
+            font-size: 30px;
+            /* 背景颜色 */
+            background-color: gold;
+            /* 字体 */
+            font-family: 'Microsoft YaHei';
+            /* 字体加粗 */
+            font-weight: bold;
+            /* 行高 */
+            line-height: 10px;
+        }
+        
+    行高应用:  让内容垂直居中:  行高=高. 
+
+20-宽高和边框属性
+
+            /* 设置元素/内容的宽度 */  ****
+            width: 200px;
+ 
+            /* 设置高度 */  ****
+            height: 200px;
+
+            /* 设置元素的边框
+            第一个值是边框宽度
+            第二个值边框 样式
+            第三个值 边框颜色
+            */
+            /* border: 10px solid black; */
+
+            border-left: 10px solid pink;
+            border-top: 20px solid purple;
+            border-bottom: 10px solid red;
+            border-right: 10px solid green;
+            
+            border可以四个方向一起写
+            
+            border也可以分开写 , border-方向 
+
+21-margin外边距属性  ***
+
+    1. 分开写
+    
+            /* 一般只设置左和顶部的外边距 它不会影响元素的真实大小,只会影响它的位置 */
+            /* margin-left: 20px;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            margin-right: 100px; */
+    
+    2. 合起来写
+    
+            /* 四边的外边距都是20px */
+            /* margin: 20px; */ 
+            /* 上下  左右 */
+            /* margin: 20px 40px; */
+            /* 上     左右   下 */
+            /* margin: 20px  50px  100px; */
+            /* 上  右  下  左 顺时针 */
+            /* margin: 10px 20px 30px 40px; */
+
+    3. 应用
+            /* 水平居中 */  *** 如何让标签水平居中 
+            margin: 0 auto;
+
+
+22-padding内边距  ***
+
+    
+    /* 内边距 就是让里面的内容和元素的边框/边界有一定距离*/
+    /* 四边都是20px */
+    /* padding: 20px; */
+    /* 上下   左右 */
+    /* padding: 20px  40px; */
+    /* 上   左右  下 */
+    /* padding: 20px 30px 50px; */
+    /* 上  右  下 左 顺时针 */
+    padding: 10px 20px 30px 40px;
+    
+    内边距与外边距的区别:
+    
+        1. 内边距会影响元素的大小
+        2. 内边距: 元素的边框与内容之间的距离
+           外边距: 元素与元素之间的距离
+
+23-今日头条案例美化
+
+    文字下划线: text-decoration : none /underline
+
+24-今日头条案例小结
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,372 @@
+5-JavaScript入门及进阶 Day05  02.54
+
+02-知识点预习
+
+	1、js基本使用
+	2、js变量定义及类型 ***
+	3、js函数定义及预解析 ***
+	4、js获取标签  ***
+	5、js读写标签属性 ***
+
+03-js简介
+
+	1. web前端三大块
+	
+		1. HTML : 结构标准
+		
+		2. CSS : 样式标准
+		
+		3. JS : 行为标准 : JavaScript , 主要运行在浏览器端的脚本语言.   作用: 与用户进行交互. (用户点击之后,js做响应)
+		
+			特点: 弱类型语言.  语法不严谨.  
+			
+			
+			JS越来越强大:
+			
+				服务器开发 . 智能家居. 
+			
+			
+
+04-js的三种书写方式
+ 
+    <!-- 1.行内式 不推荐 -->
+    <div style="color:red" onclick="alert('再点下试试!')">div标签</div>
+	
+	
+	 <!-- 2.嵌入式 -->  ***
+    <script>
+        // alert('点了,你咋了!');
+    </script>
+	
+	  <!-- 3.外链式   *** 一个script标签如果做了外链一个js文件的操作后,它里面就不要再写js代码了,如果真的要写,单独再写一个script标签   (why?  外链式: 将外链的js文件拿过来直接覆盖.)-->
+    <script src="./js/hello.js">
+    
+        // alert('点了,你咋了!');
+    </script>
+	
+	source: 源
+	
+	1. alert("弹框内容") : 弹出框 .  弹出警告框/提示框
+	
+	2. 事件:  当什么时候,做什么事情.   
+	
+		onclick: 当点击   ***
+		
+		
+		
+	
+
+05-js三种书写小结
+06-js中定义变量
+
+	1.语法  ***
+	
+		var 变量名 = 变量值;  (声明并赋值)
+		
+		var 变量名;			  (先声明,后赋值)
+		变量名 = 变量值;
+		
+	2. var : variable 变量
+	
+	3. 与python定义变量的区别?
+	
+		python中：     变量名 = 变量值
+		
+		JavaScript:   var 变量名 = 变量值;
+		
+	4. js语法与python语法的区别.
+	
+		js中每一行代码结束,要以 ; 结尾.
+		
+		js中没有缩进的要求.
+
+07-js中变量的类型
+
+	1.基本数据类型 / 简单数据类型   
+
+		数字类型  number  (int float)   ***
+		字符串 string  					***
+		布尔类型 boolean  true false    ***
+		未定义 undefined  变量未赋值就是undefined   ***
+		空类型 null  (空对象)
+		
+	2.复合类型 / 复杂数据类型
+
+		object
+
+		var oObj = {
+			name:"张三",
+			age:16,
+		}
+		
+	3.typeof 获取对象类型
+	
+		typeof(变量/值)
+		
+		返回值类型是字符串.
+	
+	4. 未定义 与 没有定义   ***
+	
+		undefined : 只声明不赋值 (js给变量的默认值)
+		
+		iNum02 is not defined :  没有定义    :  没有声明直接使用   (这是一个错误)
+		
+
+08-js变量和函数命名规范
+	
+	规范:  ***
+	
+		1. 数字,字母,下划线,$组成
+		
+		2. 不能以数字开头
+		
+		3. 区分大小写
+		
+		4. 不能使用保留字(class)和关键字 (var function)
+		
+	建议:
+	
+		匈牙利: 数据类型+小驼峰
+		
+		
+		注意:  
+		
+			js中有一部分的属性和方法. 没有按照驼峰命名法.
+			
+				事件的属性 : onclick  
+				typeof
+
+
+09-js语句及注释
+
+	1.语句/变量
+		每条语句 结尾以 英文的分号结尾
+		变量 属性 函数 名称尽量见名知意
+		
+	2.注释:
+	
+		单行注释 : //
+
+			win系统: ctrl + / 
+			Mac系统: command + /
+		
+		多行注释 : /* */   (不能嵌套)
+
+			win系统: alt + shift + a
+			mac系统: option + shift + a
+
+10-函数的定义和执行   ***
+
+    1.定义一个没有参数的函数
+	
+        function fnTest() {     ***
+			alert('没有参数的函数');
+        }
+
+        1.1 函数调用/执行
+			fnTest();
+		
+		与python的不同:  ***
+		
+			def fnTest():
+			
+				函数体: 函数的代码
+				
+			函数体,if的代码,for循环的点 . python中是: （冒号）开始，并用缩进包裹成代码块。 js中是 {} 包裹
+
+    2.定义一个有参数的函数
+        function fnResult(a,b) {  //内部自动添加var.  var a ; var b;
+            
+            // alert(a + b);
+            // return关键字的作用:  ***
+            // 1.可以返回函数的值或对象
+            // 2.可以提前结束函数的执行
+			// 3. 如果写return / 什么都不写  :   默认 return undefined
+            //return a + b; 
+			
+        } 
+			
+		函数的参数, 就是一个变量 , 不加关键字:  var 
+		
+		
+	3. 总结
+	
+		变量和函数 , 如没有指定值/返回值.  都是默认的 undefined.
+		
+		
+
+11-js中函数和变量的预解析  
+
+	1. 预解析
+	
+		执行代码之前先读一遍代码
+		1. 变量声明提升
+		
+		2. 函数声明提升
+		
+ 
+	
+
+12-js中的条件判断  ***
+
+	1. if 条件   
+	
+		if (条件1) {
+    
+		} else if (条件2){
+			
+		} else {
+
+		}
+		
+		与python的区别:
+		
+			条件 放到() 里.
+			if代码放到  {} 里 
+			else if -- elif
+			
+	2. 判等条件
+	
+		判断是否相等 : ==  , 只判断值是否相等    (内部会做类型转换)
+		判断是否全等 : === , 判断值和类型是否相等
+		
+	3. 逻辑运算
+	
+		and or not
+		&& || !
+		
+
+13-js获取html中的标签对象
+
+	1. js如何获取标签   (元素就是标签，标签就是元素)
+	使用内置对象document上的getElementById方法来获取页面上设置了id属性的元素，获取到的是一个html对象，然后将它赋值给一个变量，
+	
+		var oDiv = document.getElementById('id值')   ***
+		
+		<div id="div01" style=""> </div>
+		
+			标签的属性值,都是字符串类型
+			 
+		注意:  getElementById()函数如果没有找到标签, 就返回null  (空对象)
+			
+	2. script标签,js书写位置的注意事项
+	
+		为了避免,js找标签,找不到. 建议将script标签放到body底部.
+		
+		或者:
+		
+			window.onload事件中
+			
+			window.onload = function(){
+				js代码
+			}
+			
+	3. onload事件:
+	
+		界面加载完成事件.  html/css等等内容加载完成
+		
+	4. 匿名函数
+	
+		function(){}
+		
+		应用场景: 事件中  ***
+		
+		oDiv.onclick = function(){
+			alert('123');
+		}
+		
+		<div onclick="alert('123')"></div>
+		
+	5. 函数定义
+	
+		1. 函数声明   ***
+		
+			function fnName(){}
+			
+		2. 函数表达式
+
+
+			var fnName = function(){}    #先用声明一个变量，再把匿名函数赋值给变量。
+			
+			fnName();					#用变量（）调用函数。
+		
+
+14-js操作样式属性   ***
+
+	1. js中的标签对象属性. 与 标签中的属性 是基本上一致的.
+	
+		js中								html中
+						
+		id									id
+		value								value
+		name								name
+		
+		style								style
+		样式属性:
+		
+		驼峰命名(backgroundColor)			background-color
+		
+		className							class
+		
+		class是js中的保留字
+		
+		innerHTML							<div>xxx</div>
+		
+		
+	2. js通过style属性操作的都是 行内样式.
+		
+
+15-js操作元素样式小结
+16-js操作标签自带属性
+17-js操作标签中包裹的内容
+
+	1. innerHTML
+		内部的HTML
+		
+		普通文本
+		带标签的文本
+	
+	2. innerText
+		内部的文本
+		
+		普通文本
+
+
+18-js中的匿名函数
+
+	   // 如果一个函数只调用一次就可以用匿名函数
+       // 如果一个函数需要在多个地方去调用,就不要用匿名函数
+
+19-js网页换肤
+
+	1. js操作标签的步骤
+	
+		1. 获取标签
+		
+		2. 操作标签的属性
+
+20-名片输出案例
+
+	 oCard.className =  'idcard0' + (parseInt(oInput07.value) + 1);
+	 
+	 
+
+
+
+	oInput07.value+1  ?  01  11 21
+	
+		+ : 加号左右两侧如果有字符串,会将另一侧的数字转换为字符串.  进行字符串拼接
+		
+		+ : 如果两侧都是数字, 数字相加
+
+
+ vvvvvvvvv
+
+
+
+
+
+
+
+
+

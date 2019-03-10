@@ -1,0 +1,225 @@
+08-jQuery进阶 Day08 02.53
+
+
+02-知识点预习
+03-jQuery动画函数  ***
+
+			// 参数1:动画属性 CSS中属性 {}  多个属性之间用逗号隔开
+            // 参数2:动画持续时间 毫秒
+            // 参数3:默认可以不写  默认值就是swing  加速曲线    linear 匀速线形
+            // 参数4:动画执行完成后的回调
+            $div1.animate({'width':1000},2000,'swing',function () {
+                // console.log('div1动画执行完成');
+                // alert('div1');  // 动画完成函数,不要使用alert,对linear有影响.
+            })
+
+04-jQuery操作元素显示和隐藏  (对角线动画(长和宽都变化的动画叫对角线动画).默认没有动画时间)   ***
+	show(),hide()属于动画,    display:none;表示不占位置隐藏,属于元素样式css.
+	1. 显示 : show()
+	
+	2. 隐藏:  hide()  //长宽动变为0,固不占位置
+	
+	3. 切换 : toggle()
+	
+	4. 三元表达式/三目表达式  : 简单的if else,并且在修改同一个变量/属性. 可以替换为三元表达式
+	
+				// 三目运算    (条件)   ?     YES :  NO;   
+                
+                //             (10 > 5) ?      2  :  10
+                $div.css({'display': ($div.css('display') == 'none') ? 'block' : 'none'});
+				
+				$div.css({'display':'none'}) 这是修改css样式
+				$div.css('display')          这是获取css样式
+
+
+05-jQuery操作元素淡入淡出  (透明度动画)  ***
+
+	        1.淡入\渐渐显示\渐亮
+				$div.fadeIn(2000);
+            2. 淡出 \渐渐消失\渐渐变暗
+				$div.fadeOut(2000);
+
+            3.切换淡入淡出
+				如果当前显示就淡出,如果当前是隐藏就淡入
+				$div.fadeToggle();
+
+			4. 透明度到某个点
+				参数1:动画时间
+				参数2:透明度  0~1
+				$div.fadeTo(2000,0);
+
+06-jQuery操作元素卷起展开  (卷拉门:高度动画)  ***
+
+	// $(".box").slideDown();
+	// $(".box").slideUp();
+	// $(".box").slideToggle();
+
+07-层级菜单案例
+
+		// 获取5个a标签并给5个a标签添加点击事件
+			$('.level1').click(function () {
+				// 把点前点击的a标签下面的ul标签展开或卷起
+				// $(this).next().slideToggle();
+
+				// 当前点击的a标签 ->它的亲爹 -> 除了亲爹以为的几个叔伯 -> 找叔伯的ul这个儿子 ->卷起
+				// $(this).parent().siblings().children('ul').slideUp(); 
+
+
+			})
+			
+		总结:   点击某个标签,想去操作其他标签.
+		
+				需要先获取其他标签:   由自己出发,根据关系. 找到其他标签
+				
+										$(this)进行转移,找到其他标签
+
+08-jQuery链式调用
+
+	$(this).next().slideToggle().parent().siblings().children('ul').slideUp();
+	
+	jq的函数都会返回对象. 
+	
+		如果是转移.  返回转移后的对象
+		
+		如果是普通函数, 谁调用我,我返回谁
+
+09-jQuery操作标签自带属性
+
+	1. prop()   : 操作自带属性  ***
+	
+		property:属性
+		
+		用法: 和操作jQuery样式css() 一样
+		
+		1. 获取  属性值
+	
+			prop(字符串);
+			获取标签属性的值
+			// alert($div.prop('xxx'));  //因为不是自带属性会弹出undefined
+           // alert($a1.prop('href'));
+			
+			字符串: "属性名"
+	
+	
+		2. 设置 属性值
+		
+			prop(对象);
+			
+			对象: {"属性名1":"属性值","属性名2":"属性值"}
+			// 给属性去赋值都会覆盖旧值
+            // $div.prop({'class':'box1'});
+			
+	2. attr() : 操作自带属性,自定义属性
+	
+		自定义属性: 用于保存数据
+		自带属性: 有实际用处
+		
+		attribute: 状态,属性
+		
+		用法与prop()一样
+		
+	3. val() : 操作标签的value属性  ***
+	
+		1. 获取
+		
+			val()
+		
+		2. 设置
+		
+			val('123')
+		
+
+
+10-jQuery操作标签中包裹的内容  ***
+
+	1. 获取
+	
+		html()
+		html() 如果此函数里面什么也不传就是获取标签里面包裹的内容
+		alert($div.html());
+	2. 设置
+	
+		html("内容:普通文本/标签");
+		html()函数中传入参数表示要修改标签里面包裹的内容
+		$div.html('hahahaha')
+		$div.html('<a href="http://www.itheima.com">黑马欢迎您</a>');
+	3.jQuery操作js的innerHTML方法
+		$div[0].innerHTML
+
+11-jQuery对话框案例
+12-jQuery中的循环遍历 each() ***
+			对象集.each(function(i,elem){
+				循环要做的事
+			})
+
+			// each 中的this 表示当前正遍历出来的那个标签对象
+            // each函数中传的匿名函数可以传放两个形参
+            // 形参1: 遍历时的索引/标签的索引
+            // 形参2: 遍历出来的那个标签对象和动态的this同一个对象
+			 // 匿名函数被作为each()函数的形参,是有each()函数调用触发的,
+            // 同时,匿名函数的所需要的实参也是由each()函数给的
+            $lis.each(function (i, elem) {
+				方法一
+                if ($(this).index() % 2 == 1) {
+                 $(this).css({'color':'red'});
+                 }
+               方法二
+                if (i % 2 == 1) {
+                     $(this).css({'color':'red'});
+                }
+
+                console.log(i + elem);
+			
+          
+            })
+
+13-手风琴案例
+
+	1. 总结:
+	
+		一般情况下,通过jq的选择器,获取的一个标签集合.
+		
+		如果对标签集合有统一的操作.  调用具体的逻辑.   css() / click() / animate()
+		
+		如果对标签集合有不同的操作.  需要先遍历,然后再调用具体逻辑.
+
+14-手风琴案例小结
+15-jQuery中文本输入框焦点或失焦  ***
+			
+			ctrl+shift+空格 : 查看参数提示
+	
+            // 让文本获取焦点,没有参数
+            $input.focus();
+
+
+            // 失去焦点,点击文本框之外的区域
+            $input.blur(function () {
+                console.log('当用户输入完之后做表单验证 ,验证用户在文本输入框中输入的内容是否满足规则');
+            })
+
+16-jQuery中的鼠标事件
+
+
+	mouseover() 鼠标进入（进入子元素也触发）
+	mouseout() 鼠标离开（离开子元素也触发）		
+	
+		会有事件冒泡: 由儿子传递给父亲
+		
+	动画排队机制:  快速多次触发动画,动画累计,依次执行.
+	
+	
+				   如何解决, 执行动画之前,先停止动画. stop()
+			$('.tab_cons').stop().animate({'left':-$(this).index()*500});
+
+
+
+
+
+
+
+
+
+
+
+
+

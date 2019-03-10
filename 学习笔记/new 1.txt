@@ -1,0 +1,29 @@
+1. 操作样式属性 : 
+	css() : 行内样式
+	addClass()/removeClass()/toggleClass() : 类样式           -------------   class
+
+2. 操作自带属性 :  prop()   -------   可以操作class   :  prop({'class':'div01'})    X
+
+3. 操作除了样式属性之外的属性:  attr()    -------   可以操作class    X
+
+4. 操作内部内容 : html()
+
+
+5. this 的总结
+
+ 1. $('.list').delegate('li','click',function () {  ***
+					// 在事件委托中 this表示 触发事件的子级   (代理中的this比较特殊.当前触发事件的儿子)
+					$(this).css({'color':'red'});
+				})
+			
+			2. $oDiv.click(function(){ this })  ()  this: 当前函数click,所属的对象 $oDiv
+			
+			3. 全局函数:  全局函数是属于window对象.
+			
+				function abc(){  
+				
+					this;  (当前函数abc,所属的对象 window)
+					
+				}
+				abc();
+				window.abc();

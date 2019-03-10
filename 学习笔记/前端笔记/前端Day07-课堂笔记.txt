@@ -1,0 +1,362 @@
+07-jQuery入门 Day07  03.02
+
+02-知识点预习
+03-局部和全局变量
+
+
+	1. 局部变量  ***
+	
+		函数内部的变量,局部变量
+	
+	2. 全局变量  ***
+	
+		所有函数外部的变量,全局变量
+		
+		全局和局部的概念是相对的概念.
+		
+		作用域:  起作用的区域 : 全局变量/函数,与局部变量/函数. 的作用域不同.  ***
+
+
+	3. 隐式全局变量 (了解)
+	
+		function fnTest() { 
+              iNum = 20;   // 隐式全局变量: 函数内部声明变量不加var
+              alert(iNum);
+           } 
+	4.  如果函数内出现和全局变量同名时,局部变量的优先级比全局的高,在局部变量定义的函数内
+        去屏蔽掉全局变量,此时如果提前使用变量会提示undefined类型
+		    alert(iNum);    // 变量预解析,变量也声明提升,局部变量和全局变量名字一样 提示  undefined
+                
+            var iNum = 20;
+04-封闭函数   (了解: 用的不多)
+
+	// 封闭函数: 解决同名函数或同名变量覆盖问题
+	用匿名函数包裹函数,本质是限制作用域
+		!function () { 
+                function fnTest() {
+                    alert("现任");
+                }
+
+                fnTest();
+
+            }(); 
+			
+		也可以用另外两种写法(不推荐)
+		方法一: ~function(){函数体}();
+		方法二: (function(){函数体})();
+
+05-jQuery简介
+
+	1. jquery : 一个js文件.比较强大.提供了各种各样的工具.
+	
+	2. 工作中使用jquery.mini.版本
+	
+		压缩: 混淆(将变量名/函数名/参数名,转换为abc)  , 较少空间.
+		
+					global  - a  
+					
+				去掉注释,空格,换行
+
+
+
+06-jQuery引入测试
+
+	1.  <script src="./js/jquery-1.12.4.min.js"></script>  ***
+	
+			src:可以是本地路径,也可以是网络路径
+			
+	2. 判断是否引入成功:
+	
+		 // 如果能弹出东西说明jQuery引入成功
+			alert($);
+			
+			$(): jquery里的核心函数.
+
+07-jQuery的原生js对比  ***
+
+	1. jquery 与 js  的 区别
+	
+							Jquery   							js
+					
+		1. 界面加载完成     $(function(){});				window.onload = function(){};
+		
+							结构加载完成					 界面加载完成 : 结构+资源:图片资源,外部的css,js
+			
+		2. 获取元素对象    var $box = $('jq选择器');   		var box = document.getElementById('id');
+								$box:是jq对象						box:是js对象
+												
+			
+		3. 操作样式         $box.css():可以设置/获取   	 	box.style.xxx  (box.css()调用不到的,js对象无法调用jq对象)
+			
+							获取所有样式,设置行内样式		操作行内样式
+	
+	
+		4. 补充:
+		
+			$(js对象) : 将js对象转换为jq对象
+			
+			     $(box).css();
+	
+08-jQuery操作CSS  ***
+
+	1. css属性样式获取  : 获取所有样式
+	
+		css(字符串) 字符串指的是 "样式属性名" 比如'color';
+		$div.css('color');  获取div的所有color样式,包括行内式,嵌入式,外联式和继承父级的颜色
+		
+		用js获取就只能获取行内式 Div.style.color
+		
+		
+	
+	
+	2. css样式设置  : 设置成行内样式,因为行内样式权重值高.
+	
+		css(对象);
+		
+		对象: {"样式属性名1":"样式属性值","样式属性名2":"样式属性值"}
+		 $div.css({'color':'red','width':200,'height':'200px','background-color':'gold'});
+		
+				注意:  jquery设置样式的写法,与js一样
+				
+						"名":"值"  : 都加引号
+						
+						名: 按照驼峰命名法
+	
+	
+
+09-jQuery常用的选择器  ***
+
+	1. jquery的选择器大都与css选择器一样
+	
+		id/类/标签/后代/并集
+		
+		#id           			var $div = $('#box4');
+		.类						var $div = $('.box');
+		标签			 		var $div = $('div');
+		层级/后代选择器			var $div = $('.con .box2');
+		并集/组选择器			var $div = $('.box2,.a1');
+		
+	2.属性选择器
+	
+			// 6.属性选择器
+            var $div = $('div[name=div01]');  
+			var $div = $('div[class$=1]');// *=  表示类名里只要包含   ^= 开头是否包含  $= 结束包含
+            
+			$div.css({'color':'green'});
+			
+			快速生成标签:快速编码: zencoding.
+				(div[id="div01"]{内容}>p)*5
+				
+	3. 注意:
+	
+		var $div = $('div');
+        $div.css({'color':'green'});
+		
+			jquery的函数,会自己做遍历.
+
+10-jQuery的选择集过滤  (多个进行过滤)
+
+	1. 过滤选择器
+	
+		在$('xxx')基础之上做过滤
+		
+	2. 三种过滤选择器 (学校开班会)
+	
+		第一种: has("id/类选择器") 
+				选中后代包含xx的标签()里必须是后代的id/类选择器,(找指定孩子的家长,比如找小明的爸爸)
+		        $divs.has('p').css({'backgroundColor':'gold'});  找同级div中有包裹p标签的div ,并设置他的css背景颜色
+		
+		第二种: not("id/类选择器") 
+				选中除了xx的标签,()里不能是后代的id/类选择器	  (找所有不是一年级的家长)
+				$divs.not('.box').css({'backgroundColor':'gold'});   找div中除了类选择器为.box以外的所有div
+		
+		第三种: 选择集.eq(角标:索引) 
+				选中选择集中指定索引的标签 从0开始  **
+				$divs.eq(0).css({'color':'red'});  找同级所有div中下标为0的div
+				常用于在选择某一个li标签
+	
+11-jQuery的选择器转移  (一个进行转移:由自己查找家人)
+
+			// 1.prev previous 选中平级 上面的一个标签   ***
+            // $div3.prev().css({'color':'red'});
+
+            // 2.prevAll  选中平级兄弟  上面的所有标签
+            // $div3.prevAll().css({'color':'red'});
+
+
+            // 3.next  选中平级兄弟  下面的一个标签   ***
+            // $div3.next().css({'color':'red'});
+
+            // 4.nextAll  选中平级兄弟  下面的所有标签
+            // $div3.nextAll().css({'color':'red'});
+
+
+            // 5.siblings  选中除了自己以外的所有平级兄弟  **** (我的兄弟)
+            // $div3.siblings().css({'color':'red'});
+
+
+            // 6.children() 选中所有直接子级,不会找到孙子及后代  ***
+            // $div3.children().css({'color':'red'});
+			
+					参数: 可以传入选择器
+
+
+            // 7.find() 查找后代(可以是孩子,也可以是孙子)
+
+            // $div3.find('a').css({'color':'red'});
+			
+			
+
+			8. parent() : 找父亲  ***
+				没有参数,因为父亲一定只有一个
+	
+				找爷爷: parent().parent()
+	
+			9. parents() : 找祖宗 (所有的父级)
+
+12-判断选择器是否选择到标签
+	
+	通过 length是属性不是函数,他的值来判断是否选中.
+	
+		length=0,没有选中.
+		// 如果length为0说明没有选择到标签
+            alert($lis.length);  //弹出8说明选中8个
+
+13-jQuery中给标签添加事件  ***
+
+	1. 绑定点击事件
+	
+		jQuery对象.click(function(){});
+		
+		// 获取input标签
+            var $Btn = $('input');
+        // input标签绑定事件
+            $Btn.click(function(){
+                alert('点我干嘛')
+            });
+		
+	2. $(this) : 自己  ***
+		 this 在事件中 它表示谁触发的事件就表示谁 默认是js对象
+         把js对象转成jQuery中的对象  用$(this) 包装就可以
+	
+		应用场景: 事件中使用.  $(this) 当前触发事件的元素对象
+		$(this).css({'color':'red'});  //点击那个变红那个,
+		
+	3. index() : 
+	
+		$(this).index();  获取自己在自家排行老几(同级使用)
+		
+						   从0开始.
+						   
+	4. 与eq的区别
+	
+		选择集是多个对象的集合体
+	
+		选择集调用:多个.eq(index)  找同辈指定排行老几的人
+		
+		选择器调用:一个.index()  获取他在自家排行老几 
+		
+		
+	5. 小练习:
+	
+			//1. 给第一个ul的li添加点击事件
+            //2. 获取当前被点击的li的索引
+
+            //3. 获取第二个ul的li
+
+            //4. 通过被点击的索引,  来让第二个ul的li变颜色
+
+14-jQuery中操作样式类  ***
+
+	css({}) ;  设置行内样式
+	
+	<div style=""></div>
+	
+	
+	
+	<style>
+		.div01: xxx
+	</style>
+	
+	<div class='div01'></div>
+
+	1. 对象.addClass('div1') : 添加类样式
+								$div.addClass('box');
+	
+	2. 对象.removeClass() : 删除类样式
+								$div.removeClass('box');
+	
+	3. 对象.toggleClass() : 切换类样式 : 如果有就删除,如果没有就添加.
+								$div.toggleClass('box');
+15-元素的显示和隐藏
+
+	1. 隐藏:  
+	
+		display: none;   隐藏,并且不占位置.下面的元素会顶上去  ***
+		
+		visibility:hidden; 隐藏,占位.
+		
+	2. 显示
+		display : inline;  行内标签
+		display : block;   块标签
+		display : inline_block;   行内块标签
+		
+
+16-选项卡案例
+
+	排他思想:
+	
+		1. 干掉其他人  : siblings
+		2. 留下我自己  :  this
+
+17-选择器转移补充
+
+	1. parent() : 找父亲  ***
+	
+		找爷爷: parent().parent()
+	
+	2. parents() : 找祖宗 (所有的父级)
+
+
+18-jQuery中的动画  ***
+
+	        // 动画函数 
+            /* 
+            第一个参数: {} 动画属性 css属性  (默认只能对带单位的属性做动画:宽高,位置)
+            第二个参数:  动画持续时间   毫秒
+            第三个参数:  swing  linear   默认不传就是用 swing
+            第四个参数:  动画执行完成后的回调函数
+            */
+            $div.animate({
+                'width':'100%',
+                'background-color':'red',  // 需要单独引入jquery.color.js
+
+            }, 2000,function () {
+
+                $div.animate({
+                    'width' :200,
+                    'background-color':'green',
+                },2000);
+            });
+			
+			回调函数:  作为参数的函数,就称之为回调函数.  
+			
+					   这个函数不是我调用的.  而是参数的函数的调用.
+					   
+					   
+					 click(function(){})
+
+19-ps切图及制作雪碧图
+
+
+
+
+
+
+
+
+
+
+
+
+

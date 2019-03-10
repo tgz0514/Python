@@ -1,0 +1,117 @@
+1.Html常用标签
+	1. 常用块级标签
+	
+		h   : 标题
+		p   : 段落
+		div : 容器
+		ul>li : 无序列表
+		form : 表单 
+		
+	2. 常用行内标签
+	
+		a    : 超链接
+		span : 小容器
+		img  : 插入图 (宽高有效)
+		input : 输入框,text/password/radio/checkbox/file/reset/button (宽高有效)
+		label : 标签
+		em : 斜体(强调语义)
+		i : 斜体
+		b : 粗体
+		strong : 粗体(强调语义)
+		
+2. 常见标签属性		
+	
+	1.一般标签属性
+		id : id标识
+		style : 行内样式
+		href : a超链接地址,link外链css路径
+		src : 图片路径,script外链js路径
+		alt : 图片替换文字
+	
+	2. 表单控件属性
+		name : 控件名字
+		type : 控件类型
+		value : 控件值 
+		outline : 轮廓
+		
+3. Css常用样式
+
+	1. 实体化样式
+	
+		width : 宽
+		height : 高
+		background : 背景图片,背景位置,背景重复,背景颜色
+		border : 边框宽度,边框样式,边框颜色
+	
+	2. 间距和位置样式
+		
+		padding : 内边距
+		margin : 外边距
+		float : 浮动
+		position : 定位,relative/absolute/fixed/static
+		left/right/top/bottom : 方向属性
+		z-index : z轴层级
+ 
+	3. 文字常用属性:
+		
+		color : 颜色
+		font-size : 字体大小
+		font-family : 字体
+		font-weight : 字体加粗,normal/bold
+		font-style : 文字是否倾斜,normal/italic
+		font : 是否加粗 字号/行高 字体
+		text-decoration : 字体修饰,none/underline
+		text-indent : 文字首行缩进
+		
+		
+	4. 居中样式:  ***
+	
+		行内/文本 水平垂直居中: (父元素添加)
+			
+			line-height : 行高等于高   .  垂直居中
+			text-align : center 内容对齐方式  . 水平居中
+			
+		块级标签 : 水平居中: (自己添加) margin : 0 auto ;
+				   垂直居中: (自己添加)  margin : xx 0; 
+			
+			
+		行内块  水平居中: 父元素添加 text-align
+			    垂直居中: 自己添加 margin : xx 0;
+			
+		所有标签水平垂直居中: (子绝父相)
+		
+			position定位 : 所有标签垂直水平居中
+		
+	
+		
+	5. 其他样式:
+		list-style : 无序列表项目符号,none
+		
+		overflow : 溢出隐藏
+			特性:检测自己大小,儿子大小,检测代码是否有问题.
+				可以清除浮动产生的影响
+				可以解决外边距塌陷问题	
+		
+		
+		display : 模式转换,none/block/inline/inline-block
+		
+			float,绝对定位,固定定位,display:inline-block, 都可以模式转换为行内块.
+		
+		border-radius : 圆角边框
+		opacity : 透明度
+		
+		
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
