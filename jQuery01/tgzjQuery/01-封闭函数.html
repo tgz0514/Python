@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-封闭函数</title>
+    <!-- js外链式 ,本质是把js代码复制粘贴在这里-->
+    <script src="./js/test.js"></script>
+    <script>
+        window.onload = function () {
+
+            fnTest();
+
+
+
+            // 封闭函数: 解决同名函数或同名变量覆盖问题
+   /*          !function () {
+
+                // 用匿名函数包裹函数,本质是限制作用域
+                function fnTest() {
+                    alert("现任");
+                }
+
+                fnTest();
+
+            }(); */
+
+
+
+  /*           ~function () {
+
+
+                function fnTest() {
+                    alert("现任");
+                }
+
+                fnTest();
+
+            }(); */
+
+
+            (function () {
+
+
+                function fnTest() {
+                    alert("现任");
+                }
+
+                fnTest();
+
+            })();
+
+
+
+        }
+    </script>
+
+</head>
+
+<body>
+ 
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-jQuery选择集过滤</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 1.has()
+            var $divs = $('div');
+            // has中的传数只能是子级 后级  找到后代包含某个标签的div
+            // $divs.has('p').css({'backgroundColor':'gold'});
+
+
+            // 2.not() 里面不能传后代 和子级无关 找的是叫什么类名/id名以为的标签
+            // 
+            // $divs.not('.box').css({'backgroundColor':'gold'});
+
+
+            // 3.eq
+            var $lis = $('li');
+            // 通过角标的方式去找指定的标签,和嵌套层次无关,都是从0开始
+            $lis.eq(6).css({'color':'red'});
+        })
+    </script>
+</head>
+<body>
+
+    <div class="box">div容器
+        <p class="p1">p标签</p>
+        <a href="#">a标签</a>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+        div标签
+    </div>
+
+    <div class="box">
+            div标签1   
+    </div>
+
+
+    <ul class="list">
+        <li>li标签1</li>
+        <li>li标签2</li>
+        <li>li标签3</li>
+        <li>li标签4</li>
+        <li>li标签5</li>
+    </ul>
+
+
+    <ul class="list">
+            <li>li标签1</li>
+            <li>li标签2</li>
+            <li>li标签3</li>
+            <li>li标签4</li>
+            <li>li标签5</li>
+        </ul>
+    
+</body>
+</html>

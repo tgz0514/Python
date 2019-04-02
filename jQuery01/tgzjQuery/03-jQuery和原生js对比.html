@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-jQuery和原生js对比</title>
+    <script>
+        // 浏览器加载完成
+        window.onload = function () {
+            var oDiv = document.getElementById('box');
+
+            oDiv.style.color = 'red';
+            // 原生js只能获取到标签的行内式样式属性的值
+            alert(oDiv.style.fontSize + 'js获取');
+        }
+    </script>
+
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+/*         // html文档准备好了
+        $(document).ready(function () {
+            
+            // jQuery获取标签对象  用jQuery获取的标签对象 变量前面以$开头 
+            就是为了和原生js的标签对象进行区分
+            var $div = $('#box');
+
+            $div.css({'backgroundColor':'gold'});
+
+            // jQuery获取样式属性值时,只要它有  不管他是怎么有的 都能取到
+            alert($div.css('fontSize') + 'jQuery获取');
+        }) */
+
+
+
+/*                 // html文档准备好了
+            $().ready(function () {
+            
+            // jQuery获取标签对象  用jQuery获取的标签对象 变量前面以$开头 就是为了和原生js的标签对象进行区分
+            var $div = $('#box');
+
+            $div.css({'backgroundColor':'gold'});
+
+            // jQuery获取样式属性值时,只要它有  不管他是怎么有的 都能取到
+            alert($div.css('fontSize') + 'jQuery获取');
+        }) */
+
+
+                // html文档准备好了
+                $(function () {
+            
+            // jQuery获取标签对象  用jQuery获取的标签对象 变量前面以$开头 就是为了和原生js的标签对象进行区分
+            var $div = $('#box');
+
+            $div.css({'backgroundColor':'gold'});
+
+            // jQuery获取样式属性值时,只要它有  不管他是怎么有的 都能取到
+            alert($div.css('fontSize') + 'jQuery获取');
+        })
+        // $() 万能函数
+      
+    </script>
+
+</head>
+<body>
+    <div id="box">div标签</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-jQuery中的事件</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <!-- <script src=""></script> -->
+    <script>
+        
+        // 加载完成
+        $(function(){
+            // 获取input标签
+            var $Btn = $('input');
+            // input标签绑定事件
+            $Btn.click(function(){
+                alert('点我哈哈哈')
+            });
+            // 获取li标签
+            var $List = $('.list li');
+
+            // 把所有li标签都绑定事件
+            $List.click(function(){
+            // this 在事件中 它表示谁触发的事件就表示谁 默认是js对象
+            // 把js对象转成jQuery中的对象  用$() 包装就可以.
+            // this 就好比是pyhthon中的面向对象中的self.
+
+              $(this).css({'color':'red'});  //点击那个变红那个,
+
+                // $List.css({'color':'red'});  //点击一下所有的li标签都变红
+                // 弹出点击的是第几个li标签
+                alert($(this).index());
+                // alert($List.index());    //每次都弹出第一个索引0
+            })
+
+        })
+
+            // 原生js写法
+        //    document.getElementById('')
+
+            // jQuery中的事件click是函数,不是属性
+          
+          
+
+
+            
+
+            // this 在事件中 它表示谁触发的事件就表示谁 默认是js对象
+            // 把js对象转成jQuery中的对象  用$() 包装就可以
+          
+
+                // this.style.color = 'red';
+
+                // index() 从每一个嵌套关系中 都是从0开始
+                // index() 获取当前标签在它的直接父级中它是第几个儿子 从0开始
+         
+       
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" class="input">
+
+    <ul class="list">
+        <li>li标签1</li>
+        <li>li标签2</li>
+        <li>li标签3</li>
+        <li>li标签4</li>
+        <li>li标签5</li>
+        <li>li标签6</li>
+        <li>li标签7</li>
+        <li>li标签8</li>
+    </ul>
+
+
+
+    <ul class="list">
+            <li>li标签1</li>
+            <li>li标签2</li>
+            <li>li标签3</li>
+            <li>li标签4</li>
+            <li>li标签5</li>
+            <li>li标签6</li>
+            <li>li标签7</li>
+            <li>li标签8</li>
+        </ul>
+    
+</body>
+</html>

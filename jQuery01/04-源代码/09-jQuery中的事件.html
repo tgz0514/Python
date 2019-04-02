@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-jQuery中的事件</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var $btn = $('.input');
+
+            // 原生js写法
+            /* $btn.onclick = function () {
+                this
+            } */
+
+
+            $btn.click(function () {
+               alert('摸我干嘛!'); 
+            })
+
+
+            var $lis = $('li');
+
+            // this 在事件中 它表示谁触发的事件就表示谁 默认是js对象
+            // 把js对象转成jQuery中的对象  用$() 包装就可以
+            $lis.click(function () {
+                $(this).css({'color':'red'}); 
+
+                // this.style.color = 'red';
+
+                // index() 从每一个嵌套关系中 都是从0开始
+                // index() 获取当前标签在它的直接父级中它是第几个儿子 从0开始
+               alert($(this).index());
+
+            })
+
+            
+
+
+        })
+       
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" class="input">
+
+    <ul class="list">
+        <li>li标签1</li>
+        <li>li标签2</li>
+        <li>li标签3</li>
+        <li>li标签4</li>
+        <li>li标签5</li>
+        <li>li标签6</li>
+        <li>li标签7</li>
+        <li>li标签8</li>
+    </ul>
+
+
+
+    <ul class="list">
+            <li>li标签1</li>
+            <li>li标签2</li>
+            <li>li标签3</li>
+            <li>li标签4</li>
+            <li>li标签5</li>
+            <li>li标签6</li>
+            <li>li标签7</li>
+            <li>li标签8</li>
+        </ul>
+    
+</body>
+</html>

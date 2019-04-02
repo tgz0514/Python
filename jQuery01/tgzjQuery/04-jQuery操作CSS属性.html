@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-jQuery操作CSS属性</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 准备工作
+        $(function () {
+            var $div = $('#box');
+            // 用jQuery设置元素的样式
+            $div.css({'color':'red','width':200,'height':'200px','background-color':'gold'});
+
+            // 获取属性的值
+            alert($div.css('color'));
+
+        })
+    </script>
+</head>
+<body>
+    <div id="box">div标签</div>
+</body>
+</html>

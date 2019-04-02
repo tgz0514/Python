@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>00-全局和局部变量</title>
+
+    <script>
+        window.onload = function () {
+            
+            var iNum = 10;
+
+            // 在开发中尽量不要出现局部和全局变量同名
+            /* 
+            如果函数内出现和全局变量同名时,局部变量的优先级比全局的高,在局部变量定义的函数内
+            去屏蔽掉全局变量,此时如果提前使用变量会提示undefined类型
+             */
+            function fnTest() {
+                // 变量预解析,变量也声明提升,局部变量和全局变量名字一样,
+                // 局部变量会覆盖全局变量,此时局部变量还没有赋值,所以会提示undefined
+            //     alert(iNum);  // undefined
+                
+            //   var iNum = 20;
+
+                
+                alert(iNum); //10
+                
+            }
+
+            alert(iNum); // 10
+            fnTest();  
+            alert(iNum); // 10
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

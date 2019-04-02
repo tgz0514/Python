@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-选择器的转移</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var $div3 = $('.box3');
+
+            // $div3.css({'color':'red'});
+
+            // 1.prev previous 选中平级 上面的一个标签
+            // $div3.prev().css({'color':'red'});
+
+            // 2.prevAll  选中平级兄弟  上面的所有标签
+            // $div3.prevAll().css({'color':'red'});
+
+
+            // 3.next  选中平级兄弟  下面的一个标签
+            // $div3.next().css({'color':'red'});
+
+            // 4.nextAll  选中平级兄弟  下面的所有标签
+            // $div3.nextAll().css({'color':'red'});
+
+
+            // 5.siblings  选中除了自己以外的所有平级兄弟
+            // $div3.siblings().css({'color':'red'});
+
+
+            // 6.children() 选中所有直接子级,不会找到孙子及后代
+            // $div3.children().css({'color':'red'});
+
+
+            // 7.find() 查找后代
+
+            // $div3.find('a').css({'color':'red'});
+
+
+            // 8. parent 转移到自己的直接父级
+            // $('p').parent().css({'color':'red'});
+
+
+            // $('p').parents() 找上面的所有爹
+
+        })
+    </script>
+</head>
+<body>
+    <div class="con">div容器
+        <div>div1标签</div>
+        <div>div2标签</div>
+        <div class="box3">div3标签
+            <p>p标签</p>
+            <!-- <p>p标签<p>1111</p></p> -->
+            <span>
+                <!-- <a href="#">a标签</a> -->
+                <p>1111</p>
+            </span>
+        </div>
+        <div>div4标签</div>
+        <div>div5标签</div>
+    </div>
+</body>
+</html>

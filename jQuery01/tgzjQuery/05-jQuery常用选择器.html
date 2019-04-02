@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-jQuery常用选择器</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 准备
+        $(function () {
+            // 1.标签选择器
+            // 一下获取多个标签,存在数组中
+            // var $div = $('div');
+            // 相当于循环遍历
+            // $div.css({'color':'green'});
+
+            // 2.类选择器
+            // var $div = $('.box1');
+            // $div.css({'color':'red'});
+          
+            // 3.id选择器
+            // var $div = $('#box4');
+            // $div.css({'color':'blue'});
+
+            // 4.层级/后代选择器
+            // var $div =$('.cn .a1');
+            // $div.css({'color':'green'});
+
+
+            // 5.并集/组选择器
+            var $div = $('.box1,.ox2');
+            $div.css({'color':'green'});
+
+
+            // 6.属性选择器 ,可以正则
+            // var $div = $('div[class$=1]');  // *=  表示类名里只要包含   ^= 开头是否包含  $= 结束包含
+            // $div.css({'color':'green'});
+
+        })
+    </script>
+
+</head>
+<body>
+    <div class="cn">div容器
+        <div class="box1">div1</div>
+        <div class="ox2">div2</div>
+        <div class="a1">div3</div>
+        <div id="box4">div4</div>
+
+    </div>
+
+
+    <!-- <div class="box2">divxxxxxxx</div> -->
+
+
+    <a href="#" class="a1">a标签</a>
+
+</body>
+</html>
