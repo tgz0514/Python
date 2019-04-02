@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-jQuery特效淡入淡出</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            display: none;
+        }
+    </style>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 文档加载准备
+        $(function () {
+            var $btn = $('input'),
+            $div = $('.box');
+
+            // 给按钮添加点击事件
+            $btn.click(function () {
+                // 淡入
+            //  $div.fadeIn(2000);
+                // 淡出 
+            // $div.fadeOut();
+
+                // 如果当前显示就淡出,如果当前是隐藏就淡入
+            // $div.fadeToggle();
+
+                // 参数1:动画时间
+                // 参数2:透明度  0~1
+            $div.fadeTo(2000,0);
+
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="动画按钮">
+    <div class="box"></div>
+    <p>后面跟得p标签</p>
+</body>
+</html>

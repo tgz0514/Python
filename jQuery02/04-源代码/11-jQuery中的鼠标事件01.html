@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>11-jQuery中的鼠标事件01</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 100px auto 0px;
+
+
+            /* 块元素元素想要水平居中 用margin
+            行内或行内块 水平居中不能用margin   设置它们父级的text-align:center
+             */
+        }
+
+        .con{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            margin: 150px auto 0;
+        }
+    </style>
+
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var $box = $('.box');
+
+            //  mouseover  mouseout 存在的问题 如果鼠标在父子身上来回移动时 会导致事件重复触发
+            // 鼠标摸到大div时让它向下走100
+            $box.mouseover(function () {
+                $box.stop().animate({'margin-top':200});
+            })
+
+            // 鼠标离开时让它回到原本的位置
+            $box.mouseout(function () {
+                $box.stop().animate({'margin-top':100});
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="con"></div>
+    </div>
+</body>
+</html>

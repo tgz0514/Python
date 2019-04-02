@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-jQuery特效显示和隐藏</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            display: none;
+        }
+    </style>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 文档加载准备
+        $(function () {
+            var $btn = $('input'),
+            $div = $('.box');
+
+            $btn.click(function () {
+
+                    // 隐藏
+                // $div.hide();
+                // 显示 
+                // $div.show();
+
+                // 如果是显示的就让它隐藏,如果是隐藏的就让它显示
+                // $div.toggle();
+
+
+                // $div.css({'display': 'block'});
+
+                /* if ($div.css('display') == 'none') { // 当前是隐藏
+                    $div.css({'display': 'block'}); // 让它显示出业
+                } else {
+                    $div.css({'display': 'none'}); // 如果当前点击按钮时已经是显示的就让它隐藏
+                } */
+                // 三目运算    (条件) ?  YES :  NO;   
+                // 如果在if或else里面在修改一个变量/属性的值时就可以用三目
+                //  (10 > 5) ? 2 :  10
+                $div.css({'display': ($div.css('display') == 'none') ? 'block' : 'none'});
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="动画按钮">
+    <div class="box"></div>
+    <p>后面跟得p标签</p>
+</body>
+</html>

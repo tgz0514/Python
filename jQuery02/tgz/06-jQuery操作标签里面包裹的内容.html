@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-jQuery操作标签里面包裹的内容</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var $div = $('.box'),
+            $a1 = $('a'),
+            $input = $('input');
+            // html() 如果此函数里面什么也不传就是获取标签里面包裹的内容
+            alert($div.html());
+        //    alert( $div.html());
+
+            // 如果html()函数中传入参数表示要修改标签里面包裹的内容
+            $div.html('hahahaha')
+        // $div.html('修改后的内容');
+            
+        alert($div[0].innerHTML) 
+
+
+        $div.html('<a href="http://www.itheima.com">黑马欢迎您</a>');
+
+        })
+    </script>
+</head>
+<body>
+        <div class="box" xxx='123'>div标签</div>
+        <a href="#">a标签</a>
+        <input type="text">
+</body>
+</html>

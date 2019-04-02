@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-jQuery操作标签自带属性</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var $div = $('.box'),
+            $a1 = $('a'),
+            $input = $('input');
+
+
+            // 获取标签属性的值
+            // alert($div.prop('xxx'));
+            // alert($a1.prop('href'));
+
+            $div.click(function () {
+               alert($input.prop('value'));
+
+                // 给属性去赋值都会覆盖旧值
+            // $div.prop({'class':'box1'});
+
+            // $a1.prop({'href':'http://www.baidu.com', 'title':'这是百度'});
+
+                // val() 主要是用来获取文本输入框中 输入的内容 value属性值
+                // 如果此函数里面什么也不传就是获取值
+                // 如果传东西就是赋值
+        //    alert($input.val('123'));
+
+        // attr() 它或以给标签添加自定义属性 或取自定义属性的值
+    //   alert(  $div.attr('xxx'));
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div class="box" xxx='123'>div标签</div>
+    <a href="#">a标签</a>
+    <input type="text">
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-jQuery中的循环遍历</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var $lis = $('.list li');
+
+            // ctrl + d  可以选择当前同名的变量
+            for (var i = 0; i < $lis.length; i++) {
+                if (i % 2 == 1) {
+                    // 用对象.eq(i)可以拿到想要的对象
+                    $lis.eq(i).css({'color':'red'});
+                }
+            } 
+
+            // each 中的this 表示当前正遍历出来的那个标签对象
+            // each函数中传的匿名函数可以传放两个形参
+            // 形参1: 遍历时的索引/标签的索引
+            // 形参2: 遍历出来的那个标签对象和动态的this同一个对象
+            // 匿名函数作为each()函数的形参,是有each()函数调用触发的,
+            // 同时,匿名函数的所需要的实参也是由each()函数给的
+
+            $lis.each(function(i,self){
+                if (i % 2 ==1){
+                    $(this).css({'color':'green'});
+                }
+
+            })
+            // $lis.each(function (i, elem) {
+            //     if ($(this).index() % 2 == 1) {
+            //         $(this).css({'color':'red'});
+            //     }
+                // 方法二
+                // if (i % 2 == 1) {
+                //     $(this).css({'color':'red'});
+                // }
+
+                // console.log(i + elem);
+            // })
+        })
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <li>li标签1</li>
+        <li>li标签2</li>
+        <li>li标签3</li>
+        <li>li标签4</li>
+        <li>li标签5</li>
+        <li>li标签6</li>
+        <li>li标签7</li>
+        <li>li标签8</li>
+    </ul>
+</body>
+</html>

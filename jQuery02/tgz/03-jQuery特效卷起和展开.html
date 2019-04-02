@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-jQuery特效卷起和展开</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            display: none;
+        }
+    </style>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 文档加载准备
+        $(function () {
+            var $btn = $('input'),
+            $div = $('.box');
+
+            // 给按钮添加点击事件
+            $btn.click(function () {
+                // 展开
+            // $div.slideDown(2000);
+            // $div.slideDown(2000);
+                // 卷起
+                // $div.slideUp(5000);
+                // $div.slideUp(2000);
+
+                // 如果当前是显示的就卷起,如果当前不显示就展开
+                $div.stop().slideToggle(2000);
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="动画按钮">
+    <div class="box"></div>
+    <p>后面跟得p标签</p>
+</body>
+</html>
